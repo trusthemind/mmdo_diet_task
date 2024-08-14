@@ -8,6 +8,7 @@ import {
 } from "@/helpers/solver";
 import { Button, Card, CardHeader, Input } from "@nextui-org/react";
 import { useState } from "react";
+import s from "./style.module.scss";
 
 const Home = () => {
   const [iterations, setIterations] = useState<Iteration[]>([]);
@@ -43,11 +44,11 @@ const Home = () => {
   return (
     <Card className="App">
       <CardHeader>Симплекст таблиця</CardHeader>
-      <div>
-        <h2>Коефіціенти</h2>
+      <h2>Коефіціенти</h2>
+      <div className={s.itemHolder}>
         {inputs.coefficients.map((coef, index) => (
           <div key={index}>
-            x{index + 1}:
+            <b>x{index + 1}:</b>
             <Input
               type="number"
               value={coef.toString()}
@@ -56,8 +57,8 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <div>
-        <h2>Constraints Bounds</h2>
+      <h2>Ціності</h2>
+      <div className={s.itemHolderFlex}>
         <div>
           Білки:
           <Input
@@ -89,7 +90,9 @@ const Home = () => {
           />
         </div>
       </div>
-      <Button onClick={handleSolveProblem}>Solve Problem</Button>
+      <Button onClick={handleSolveProblem} className={s.buttom}>
+        Solve Problem
+      </Button>
       {iterations.map((iteration, key) => (
         <IterationTable key={key} iteration={iteration} />
       ))}

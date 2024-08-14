@@ -54,8 +54,17 @@ const SimplexTable: React.FC<SimplexTableProps> = ({
           </TableRow>
         </TableBody>
       </Table>
-      <Card style={{ padding: "$4", marginTop: "$4" }}>
-        <Button
+      <Card
+        style={{
+          padding: "$4",
+          marginTop: "$4",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+          gap: "1rem",
+        }}
+      >
+        {/* <Button
           onClick={() => onIterationChange(iterationIndex - 1)}
           disabled={iterationIndex === 0}
         >
@@ -66,7 +75,7 @@ const SimplexTable: React.FC<SimplexTableProps> = ({
           disabled={iterationIndex === iterations.length - 1}
         >
           Next
-        </Button>
+        </Button> */}
       </Card>
     </>
   );
