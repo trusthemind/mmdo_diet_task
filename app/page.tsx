@@ -91,7 +91,7 @@ const Home = () => {
         </div>
       </div>
       <Button onClick={handleSolveProblem} className={s.buttom}>
-        Solve Problem
+        Вирішити
       </Button>
       {iterations.map((iteration, key) => (
         <IterationTable key={key} iteration={iteration} />
